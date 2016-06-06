@@ -8,7 +8,10 @@
 namespace common\traits\base;
 
 trait FormatterTrait{
-    public $format;
+    public $formats = [
+    		'date' => 'jS F, Y',
+    		'money' = > '%.2n',
+    	];
     private $methods;
     public function __get($name){
         $this->methods = get_class_methods($this);
@@ -23,10 +26,10 @@ trait FormatterTrait{
     }
 
     public function getDateFormatted($value){
-        return date('Y', strtotime($value));
+        return date($this->formats['date'], strtotime($value));
     }
 
     public function getMoneyFormatted($value){
-        return Helper::money($value);
+        return money_format($this->formats['money'], $value);
     }
 }
