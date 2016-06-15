@@ -7,6 +7,11 @@
  */
 namespace common\traits\base;
 
+/**
+ * Trait FormatterTrait
+ * @property array $formats Can be used to set or return the format expressions for the available formats
+ * @package yz\shoppingcart
+ */
 trait FormatterTrait{
     public $formats = [
     		'date' => 'jS F, Y',
@@ -24,7 +29,7 @@ trait FormatterTrait{
         }
         return parent::__get($name);
     }
-
+    
     public function getDateFormatted($value){
         return date($this->formats['date'], strtotime($value));
     }
