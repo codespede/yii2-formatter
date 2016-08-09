@@ -10,7 +10,7 @@ namespace common\traits\base;
 /**
  * Trait FormatterTrait
  * @property array $formats Can be used to set or return the format expressions for the available formats
- * @package yz\shoppingcart
+ * @package codespede\yii2-formatter
  */
 trait FormatterTrait{
     public $formats = [
